@@ -1,0 +1,252 @@
+.chatspage {
+   header {
+      background-color: $white-color;
+      color: $black-color;
+
+      .content {
+         height: 10vh;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0 1rem;
+
+         .search-box {
+            position: relative;
+            flex: 1;
+
+            h5 {
+               display: inline;
+               padding: 0.7rem 1.5rem;
+               cursor: pointer;
+               background-color: lighten($grey-color, 10%);
+               border-radius: 10px;
+               @include easeOut();
+
+               i {
+                  margin-right: 0.5rem;
+               }
+
+               &:hover {
+                  background-color: $grey-color;
+               }
+            }
+         }
+
+         .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            justify-content: flex-end;
+
+            img {
+               width: 30px;
+               height: 30px;
+               border-radius: 100%;
+               cursor: pointer;
+            }
+
+            i {
+               font-size: 1.2rem;
+               margin-right: 1rem;
+               cursor: pointer;
+               @include easeOut();
+
+               &:hover {
+                  color: $grey-color;
+               }
+            }
+         }
+      }
+   }
+
+   .searchlistmodal {
+      background-color: darken($white-color, 10%);
+      position: absolute;
+      top: 0%;
+      left: 0;
+      z-index: 2;
+      width: 30%;
+      height: 100%;
+      padding: 0 1rem 0.5rem 1rem;
+      overflow-y: scroll;
+      animation: showSearchModal 1s forwards;
+
+      &::-webkit-scrollbar {
+         width: 0.3rem;
+
+         &-thumb {
+            background-color: $grey-color;
+            width: 0.5rem;
+            border-radius: 10px;
+         }
+      }
+
+      .head {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         span {
+            font-size: 2.5rem;
+            font-weight: bolder;
+            cursor: pointer;
+         }
+      }
+
+      .search-box {
+         display: flex;
+         margin: 0.5rem 0 1rem 0;
+         input {
+            width: 100%;
+            margin: 0.2rem 0;
+            padding: 0.7rem 1rem;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid $grey-color;
+            border-radius: 10px;
+            font-size: 0.8rem;
+         }
+      }
+
+      .users-list {
+         .user {
+            background-color: $grey-color;
+            display: flex;
+            align-items: center;
+            justify-items: flex-start;
+            margin: 0.5rem 0;
+            border-radius: 10px;
+            padding: 0.5rem;
+            cursor: pointer;
+            @include easeOut();
+
+            .img {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 100%;
+               }
+            }
+
+            .details {
+               display: flex;
+               align-items: flex-start;
+               justify-content: flex-start;
+               flex-direction: column;
+               margin-left: 0.5rem;
+            }
+
+            &:hover {
+               background-color: $success-color;
+            }
+         }
+      }
+   }
+
+   @keyframes showSearchModal {
+      0% {
+         transform: translateX(-100%);
+      }
+      100% {
+         transform: translateX(0%);
+      }
+   }
+
+   main {
+      display: flex;
+      align-items: flex-start;
+      //   justify-content: ;
+      //   display: none;
+      height: 87vh;
+
+      .chatlist {
+         background-color: $white-color;
+         color: $black-color;
+         width: 100%;
+         height: 100%;
+         flex: 1;
+         margin: 0.5rem;
+         border-radius: 10px;
+         padding: 1rem;
+
+         .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         }
+      }
+
+      .chat-box {
+         background-color: $white-color;
+         color: $black-color;
+         width: 100%;
+         position: relative;
+         height: 100%;
+         flex: 2;
+         margin: 0.5rem;
+         border-radius: 10px;
+         padding: 1rem;
+         overflow-y: scroll;
+
+         &::-webkit-scrollbar {
+            width: 0.3rem;
+
+            &-thumb {
+               background-color: $grey-color;
+               width: 0.5rem;
+               border-radius: 10px;
+            }
+         }
+
+         .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon {
+               i {
+                  font-size: 1.5rem;
+               }
+            }
+         }
+
+         .content {
+            background-color: lighten($grey-color, 10%);
+            position: relative;
+            height: 100%;
+            border-radius: 10px;
+
+            form {
+               position: absolute;
+               bottom: 0;
+               left: 0;
+               width: 100%;
+               // background-color: coral;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               padding: 0 0.5rem;
+               .input {
+                  flex: 2;
+               }
+            }
+         }
+      }
+      .no-message-box {
+         background-color: $white-color;
+         color: $black-color;
+         width: 100%;
+         height: 100%;
+         flex: 2;
+         border-radius: 10px;
+         margin: 0.5rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+}

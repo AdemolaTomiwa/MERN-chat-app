@@ -1,0 +1,26 @@
+{
+   "name": "reactexpress",
+   "version": "1.0.0",
+   "description": "Starter kit for creating React/Redux and Express apps",
+   "type": "module",
+   "main": "server.js",
+   "scripts": {
+      "client-install": "cd frontend && npm install",
+      "start": "node backend/server.js",
+      "server": "nodemon backend/server.js",
+      "client": "npm start --prefix frontend",
+      "dev": "concurrently \"npm run server\" \"npm run client\""
+   },
+   "author": "Tomiwa Adelae && The Media",
+   "license": "MIT",
+   "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "cloudinary": "^1.30.1",
+      "colors": "^1.4.0",
+      "concurrently": "^4.1.1",
+      "dotenv": "^16.0.1",
+      "express": "^4.17.1",
+      "jsonwebtoken": "^8.5.1",
+      "nodemon": "^1.19.1"
+   }
+}

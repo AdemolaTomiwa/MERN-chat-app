@@ -1,0 +1,191 @@
+.container {
+   width: 85%;
+   max-width: 1125px;
+   margin: auto;
+}
+
+a {
+   color: $black-color;
+   text-decoration: none;
+}
+
+@mixin easeOut {
+   transition: all ease-in-out 0.5s;
+}
+
+// Font sizes
+h1 {
+   font-size: 4rem;
+}
+
+h2 {
+   font-size: 3rem;
+}
+
+h3 {
+   font-size: 2rem;
+}
+
+h4 {
+   font-size: 1.5rem;
+}
+
+h5 {
+   font-size: 1rem;
+}
+
+h6 {
+   font-size: 0.8rem;
+}
+
+// Buttons
+.btn {
+   padding: 0.7rem 1rem;
+   font-size: 0.9rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   border: none;
+   font-family: 'Montserrat', sans-serif;
+   cursor: pointer;
+   border-radius: 10px;
+   @include easeOut();
+
+   &-blue {
+      background-color: $blue-color;
+      color: $white-color;
+
+      &:hover {
+         background-color: darken($blue-color, 10%);
+      }
+   }
+
+   &-grey {
+      background-color: $grey-color;
+      color: $black-color;
+
+      &:hover {
+         background-color: darken($grey-color, 10%);
+      }
+   }
+
+   &-danger {
+      background-color: $danger-color;
+      color: $white-color;
+
+      &:hover {
+         background-color: darken($danger-color, 10%);
+      }
+   }
+
+   &-success {
+      background-color: $success-color;
+      color: $white-color;
+
+      &:hover {
+         background-color: darken($success-color, 10%);
+      }
+   }
+}
+
+form {
+   //    width: 70%;
+   margin: auto;
+   div {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      //   padding: 1rem;
+      flex-direction: column;
+      //   background-color: red;
+      label {
+         font-family: 'Montserrat', sans-serif;
+         font-size: 0.9rem;
+         font-weight: bold;
+
+         span {
+            font-weight: bolder;
+         }
+      }
+      input {
+         width: 100%;
+         margin: 0.2rem 0;
+         padding: 0.7rem 1rem;
+         border: none;
+         font-family: 'Montserrat', sans-serif;
+         border: 2px solid $grey-color;
+         border-radius: 10px;
+      }
+   }
+   .password {
+      position: relative;
+      strong {
+         position: absolute;
+         top: 75%;
+         right: 1%;
+         transform: translate(-1%, -75%);
+         background-color: lighten($grey-color, 10%);
+         cursor: pointer;
+         border-radius: 10px;
+         font-size: 0.8rem;
+         padding: 0.2rem 0.8rem;
+         @include easeOut();
+
+         &:hover {
+            background-color: $grey-color;
+         }
+      }
+   }
+}
+
+// Msg box
+.error-msg {
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translate(-50%, 0%);
+   background-color: $danger-color;
+   color: $white-color;
+   padding: 0.5rem;
+   width: 100%;
+   font-weight: bold;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   animation: show 0.5s forwards;
+   z-index: 4;
+}
+
+@keyframes show {
+   0% {
+      transform: translate(-50%, 100%);
+   }
+   100% {
+      transform: translate(-50%, -0%);
+   }
+}
+
+// Loader
+.loader-wrapper {
+   .loader {
+      background-color: red;
+      width: 100%;
+      height: 3rem;
+      border-radius: 10px;
+      margin: 0.5rem 0;
+      animation: loader 2s infinite;
+   }
+
+   @keyframes loader {
+      0% {
+         background-color: lighten($grey-color, 10%);
+      }
+      50% {
+         background-color: lighten($grey-color, 5%);
+      }
+      100% {
+         background-color: lighten($grey-color, 10%);
+      }
+   }
+}

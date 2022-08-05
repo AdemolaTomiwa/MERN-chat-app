@@ -1,0 +1,39 @@
+.loginpage {
+   //    background-color: $white-color;
+   color: $black-color;
+   position: absolute;
+   top: 30%;
+   left: 50%;
+   width: 40%;
+   transform: translate(-50%, -30%);
+
+   .head {
+      background-color: $white-color;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+   }
+
+   .form-body {
+      background-color: $white-color;
+      margin: 1rem 0;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+
+      h4 {
+         color: $blue-color;
+      }
+
+      .btn {
+         width: 100%;
+      }
+
+      strong {
+         font-size: 14px;
+         a {
+            color: $blue-color;
+         }
+      }
+   }
+}
